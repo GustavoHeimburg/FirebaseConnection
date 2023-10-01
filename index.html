@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Aba Login</title>
+</head>
+
+<body>
+    <form>
+        <div class="form-field">
+            <div><label>Email</label></div>
+            <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()"/>
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é inválido</div>
+        </div>
+        <div class="form-field">
+            <div><label>Senha</label></div>
+            <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()"/>
+            <div class="error" id="password-required-error">Senha é obrigatória</div>
+        </div>
+        <div>
+            <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
+        </div>
+        <div>
+            <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Entrar</button>
+        </div>
+        <div>
+            <button type="button" class="outline" onclick="register()">Registrar</button>
+        </div>
+    </form>
+</body>
+
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="global.css">
+
+<script src="index.js"></script>
+<script src="validations.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCV8fTY0yRwkYaEeLxlBloArVdc2o60I8E",
+        authDomain: "save-info-b09ce.firebaseapp.com",
+        projectId: "save-info-b09ce",
+        storageBucket: "save-info-b09ce.appspot.com",
+        messagingSenderId: "353021082281",
+        appId: "1:353021082281:web:fb1477ed9a35e372efc7b8",
+        measurementId: "G-32LW98CSYT"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+</html>
